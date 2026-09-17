@@ -1,91 +1,92 @@
-*{
+
+* {
     box-sizing: border-box;
     margin: 0;
-    padding:0;
+    padding: 0;
 }
 
-body{
-    font-family:Arial, sans-serif;
+body {
+    font-family: Arial, sans-serif;
     background-color: #f4f6f9;
-    color:#333;
+    color: #333;
     padding: 20px;
 }
 
-.container{
+.container {
     max-width: 650px;
     background-color: #ffffff;
-    margin:30px auto;
+    margin: 30px auto;
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-label{
+label {
     font-weight: bold;
     font-size: 14px;
 }
 
-input{
-    padding:10px;
-    border:1px solid #ccc;
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
 }
 
-h1{
+h1 {
     text-align: center;
     margin-bottom: 20px;
     color: #1e293b;
 }
 
-form{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     margin-bottom: 25px;
 }
 
-.form-gorup{
-    display:flex;
+.form-group {
+    display: flex;
     flex-direction: column;
-    gap:5px;
+    gap: 5px;
 }
 
-input:focus{
-    outline:none;
+input:focus {
+    outline: none;
     border-color: #2563eb;
 }
 
 button {
-    padding:10px 15px;
+    padding: 10px 15px;
     font-size: 15px;
     font-weight: bold;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: backgroud-color 0.2s;
+    transition: background-color 0.2s;
 }
 
-.btn-primary{
+.btn-primary {
     background-color: #2563eb;
     color: white;
 }
 
-.btn-primary:hover{
+.btn-primary:hover {
     background-color: #1d4ed8;
 }
 
-.btn-danger{
+.btn-danger {
     background-color: #dc2626;
     color: white;
 }
 
-.btn-danger:hover{
+.btn-danger:hover {
     background-color: #b91c1c;
 }
 
-.resumo-container{
-    display:flex;
+.resumo-container {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
@@ -93,35 +94,37 @@ button {
     border-top: 2px solid #e2e8f0;
 }
 
-#total-estoque{
+#total-estoque {
     font-size: 18px;
     color: #0f172a;
 }
 
-table{
-    width:100%;
+table {
+    width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
 }
 
-th,td{
+th,
+td {
     border: 1px solid #cbd5e1;
     padding: 10px;
     text-align: center;
 }
 
-th{
+th {
     background-color: #2563eb;
     color: white;
 }
 
-tbody tr:nth-child(even){
+tbody tr:nth-child(even) {
     background-color: #f8fafc;
 }
 
-.btn-remover{
+.btn-remover {
     background-color: #ef4444;
     color: white;
     padding: 5px 10px;
     font-size: 12px;
 }
+
