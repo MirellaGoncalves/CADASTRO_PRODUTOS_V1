@@ -1,4 +1,4 @@
-<html>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -21,16 +21,15 @@
             </div>
             <div class="form-group">
                 <label for="quantidade">Quantidade:</label>
-                <input type="number" id="quantidade" min="1" placeholder="Ex: 5" required>
+                <input type="number" id="quantidade" min="1" step="1" placeholder="Ex: 5" required>
             </div>
             <button type="submit" class="btn-primary">Adicionar Produto</button>
+            <button type="button" id="cancelar-edicao" class="btn-cancelar" hidden>Cancelar edição</button>
         </form>
-
         <div class="resumo-container">
-            <h3 id="total-estoque">Total em estoque: R$0,00</h3>
-            <button id="limpar-tabela" class="btn-danger">Limpar tudo</button>
+            <h3 id="total-estoque">Total em estoque: R$ 0,00</h3>
+            <button id="limpar-tabela" class="btn-danger" type="button">Limpar tudo</button>
         </div>
-
         <table id="tabela-produtos">
             <thead>
                 <tr>
@@ -41,12 +40,9 @@
                     <th>Ações</th>
                 </tr>
             </thead>
-            <tbody>
-            </tbody>
+            <tbody></tbody>
         </table>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
-
