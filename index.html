@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -10,7 +9,7 @@
 <body>
     <div class="container">
 
-        <!-- Espaço para sua foto: troque o arquivo pela sua imagem -->
+        <!-- Espaço para sua foto -->
         <div class="foto-perfil">
             <img src="IMG_7693.jpg" alt="Minha foto"
                  onerror="this.style.display='none'; this.parentElement.classList.add('sem-foto');">
@@ -20,25 +19,39 @@
         <h1>Cadastro de produto</h1>
         <p class="subtitulo">✧ Organize seu estoque com um toque de magia ✧</p>
 
-        <form id="produto-form">
+        <!-- Botão solicitado na atividade V5 -->
+        <div class="acoes-topo">
+            <button type="button" id="btn-conceito-bootstrap" class="btn-bootstrap">
+                Ver Conceito Bootstrap
+            </button>
+        </div>
+
+        <form id="produto-form" novalidate>
+
+            <!-- Mensagem inline para erros -->
+            <div id="mensagem-erro" class="mensagem-erro"
+                 role="alert" aria-live="assertive" hidden></div>
+
             <div class="form-group">
                 <label for="nome">Nome do produto:</label>
-                <input type="text" id="nome" placeholder="Ex: Notebook" required>
+                <input type="text" id="nome" placeholder="Ex: Notebook"
+                       autocomplete="off" aria-describedby="mensagem-erro">
             </div>
 
             <div class="form-group">
                 <label for="preco">Preço (R$):</label>
                 <input type="number" id="preco" step="0.01" min="0.01"
-                       placeholder="Ex: 3500.00" required>
+                       placeholder="Ex: 3500.00" aria-describedby="mensagem-erro">
             </div>
 
             <div class="form-group">
                 <label for="quantidade">Quantidade:</label>
                 <input type="number" id="quantidade" min="1" step="1"
-                       placeholder="Ex: 5" required>
+                       placeholder="Ex: 5" aria-describedby="mensagem-erro">
             </div>
 
             <button type="submit" class="btn-primary">Adicionar Produto</button>
+
             <button type="button" id="cancelar-edicao" class="btn-cancelar" hidden>
                 Cancelar edição
             </button>
@@ -49,6 +62,7 @@
                 <span class="resumo-legenda">✧ RESUMO DO ESTOQUE</span>
                 <h3 id="total-estoque">Total em estoque: R$ 0,00</h3>
             </div>
+
             <button id="limpar-tabela" class="btn-danger" type="button">
                 Limpar tudo
             </button>
@@ -76,11 +90,40 @@
             </table>
         </div>
 
+        <p id="mensagem-status" class="mensagem-status"
+           role="status" aria-live="polite" hidden></p>
+
         <p class="rodape">✧ Feito com cuidado, entre estrelas e lavandas ✧</p>
 
+    </div>
+
+    <!-- Modal customizado -->
+    <div id="modal-overlay" class="modal-overlay" hidden>
+        <section class="modal" role="dialog" aria-modal="true"
+                 aria-labelledby="modal-titulo" aria-describedby="modal-mensagem">
+
+            <button type="button" id="modal-fechar" class="modal-fechar"
+                    aria-label="Fechar janela">×</button>
+
+            <div class="modal-icone">✧</div>
+
+            <h2 id="modal-titulo">Confirmação</h2>
+
+            <div id="modal-mensagem" class="modal-mensagem"></div>
+
+            <div class="modal-acoes">
+                <button type="button" id="modal-cancelar" class="btn-modal-cancelar">
+                    Cancelar
+                </button>
+
+                <button type="button" id="modal-confirmar" class="btn-modal-confirmar">
+                    Confirmar
+                </button>
+            </div>
+
+        </section>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-```

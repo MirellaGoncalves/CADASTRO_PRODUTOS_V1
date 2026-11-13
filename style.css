@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
 :root {
@@ -56,7 +55,6 @@ body {
         0 0 30px rgba(185, 156, 219, 0.08);
 }
 
-
 /* CORREÇÃO DA FOTO DE PERFIL */
 
 .container {
@@ -105,7 +103,7 @@ body {
     }
 }
 
-/* Detalhe exibido enquanto não houver foto */
+/* DETALHE EXIBIDO ENQUANTO NÃO HOUVER FOTO */
 
 .icone-foto {
     display: none;
@@ -335,6 +333,7 @@ button:focus-visible {
 }
 
 .busca-container input:focus {
+    outline: none;
     border-color: var(--roxo);
 }
 
@@ -532,5 +531,259 @@ tbody tr:last-child td {
     *::after {
         scroll-behavior: auto !important;
         transition: none !important;
+    }
+}
+
+/* =================================
+   V5 - MENSAGENS INLINE E TOAST
+================================= */
+
+.mensagem-erro {
+    width: 100%;
+    padding: 12px 15px;
+    color: #a52f50;
+    background: #fff0f4;
+    border: 1px solid #efc3d0;
+    border-left: 4px solid #c66e88;
+    border-radius: 9px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.mensagem-status {
+    margin-top: 18px;
+    padding: 12px 15px;
+    border-radius: 9px;
+    font-size: 13px;
+    text-align: center;
+    animation: aparecerMensagem 0.25s ease;
+}
+
+.mensagem-status.sucesso {
+    color: #426e57;
+    background: #e8f3ec;
+    border: 1px solid #cde3d5;
+}
+
+.mensagem-status.erro {
+    color: #a52f50;
+    background: #fff0f4;
+    border: 1px solid #efc3d0;
+}
+
+.mensagem-status.aviso {
+    color: #795c2b;
+    background: #fff7e8;
+    border: 1px solid #f0dfbd;
+}
+
+@keyframes aparecerMensagem {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =================================
+   V5 - BOTÃO CONCEITO BOOTSTRAP
+================================= */
+
+.acoes-topo {
+    display: flex;
+    justify-content: center;
+    margin: -12px 0 25px;
+}
+
+.btn-bootstrap {
+    color: #ffffff;
+    background: linear-gradient(135deg, #8060a5, #503568);
+    border: 1px solid #6d4c91;
+    box-shadow: 0 4px 11px rgba(80, 53, 104, 0.16);
+}
+
+.btn-bootstrap:hover {
+    background: linear-gradient(135deg, #9273b4, #61427c);
+    box-shadow: 0 6px 15px rgba(80, 53, 104, 0.22);
+}
+
+/* =================================
+   V5 - MODAL CUSTOMIZADO
+================================= */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(18, 9, 27, 0.68);
+    backdrop-filter: blur(4px);
+    animation: aparecerFundo 0.2s ease;
+}
+
+.modal-overlay[hidden] {
+    display: none !important;
+}
+
+.modal {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 32px 28px 26px;
+    color: var(--texto);
+    text-align: center;
+    background: #fffaff;
+    border: 1px solid #e5d8f1;
+    border-radius: 19px;
+    box-shadow: 0 22px 65px rgba(12, 5, 20, 0.35);
+    animation: aparecerModal 0.25s ease;
+}
+
+.modal-fechar {
+    position: absolute;
+    top: 10px;
+    right: 13px;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    color: #8a789a;
+    background: transparent;
+    font-size: 27px;
+    line-height: 1;
+}
+
+.modal-fechar:hover {
+    color: #503568;
+    background: #f2eafa;
+    transform: none;
+}
+
+.modal-icone {
+    margin-bottom: 9px;
+    color: #9270bd;
+    font-size: 29px;
+}
+
+.modal h2 {
+    margin-bottom: 13px;
+    color: var(--roxo-escuro);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 23px;
+}
+
+.modal-mensagem {
+    color: var(--texto-suave);
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: left;
+}
+
+.modal-mensagem p {
+    margin-bottom: 12px;
+}
+
+.modal-mensagem p:last-child {
+    margin-bottom: 0;
+}
+
+.modal-mensagem strong {
+    color: var(--roxo-escuro);
+}
+
+.modal-mensagem ul {
+    margin: 8px 0 14px 20px;
+}
+
+.modal-mensagem li {
+    margin-bottom: 5px;
+}
+
+.modal-acoes {
+    display: flex;
+    justify-content: center;
+    gap: 11px;
+    margin-top: 25px;
+}
+
+.btn-modal-cancelar {
+    color: var(--roxo-escuro);
+    background: #eee6f6;
+    border: 1px solid #ded0ed;
+}
+
+.btn-modal-cancelar:hover {
+    background: #e2d5ef;
+}
+
+.btn-modal-confirmar {
+    color: #ffffff;
+    background: linear-gradient(135deg, #75529a, #503568);
+    box-shadow: 0 4px 10px rgba(80, 53, 104, 0.18);
+}
+
+.btn-modal-confirmar:hover {
+    background: linear-gradient(135deg, #8664ad, #61427c);
+}
+
+body.modal-aberto {
+    overflow: hidden;
+}
+
+@keyframes aparecerFundo {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes aparecerModal {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .acoes-topo {
+        margin-top: -8px;
+        margin-bottom: 22px;
+    }
+
+    .btn-bootstrap {
+        width: 100%;
+    }
+
+    .modal {
+        padding: 30px 20px 22px;
+    }
+
+    .modal h2 {
+        font-size: 21px;
+    }
+
+    .modal-acoes {
+        flex-direction: column-reverse;
+    }
+
+    .modal-acoes button {
+        width: 100%;
     }
 }
